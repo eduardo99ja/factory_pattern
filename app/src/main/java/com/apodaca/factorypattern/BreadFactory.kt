@@ -6,7 +6,7 @@ class BreadFactory {
         return when (breadType) {
             "BAG" -> Baguette()
             "SLI" -> Sliced()
-            "Rol" -> Roll()
+            "ROL" -> Roll()
             else -> null
         }
     }
