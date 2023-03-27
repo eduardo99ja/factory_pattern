@@ -11,17 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textView = findViewById<TextView>(R.id.textView)
-        val breadFactory = BreadFactory()
-        val bread = breadFactory.getBread("BAG")
+        val fillingFactory = FactoryGenerator.getFactory("FIL")
+        val filling = fillingFactory!!.getFilling("TOM")
+        Log.d(TAG, filling!!.name() + filling.calories())
 
-        textView.text = StringBuilder()
-            .append(bread!!.name())
-            .append("\n")
-            .append(breadFactory.getBread("ROL")!!.name())
-            .append("\n")
-            .append(breadFactory.getBread("SLI")!!.name())
-
-        Log.e(TAG, bread.name())
+        val breadFactory = FactoryGenerator.getFactory("BRE")
+        val bread = breadFactory!!.getBread("BAG")
+        Log.d(TAG, bread!!.name() + bread.calories())
     }
 }

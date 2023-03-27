@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="common_padding_middle">24dp</dimen>
+
+    <dimen name="card_img_cover_height">180dp</dimen>
+
+    <dimen name="card_padding_chip">14dp</dimen>
+    <dimen name="card_padding_button">20dp</dimen>
+
+    <dimen name="card_baseline_title">44dp</dimen>
+    <dimen name="card_baseline_secondary">32dp</dimen>
+    <dimen name="card_baseline_supporting">26dp</dimen>
+    <dimen name="card_baseline_subtitle">36dp</dimen>
+</resources>

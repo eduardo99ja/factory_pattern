@@ -1,7 +1,7 @@
 package com.apodaca.factorypattern
 
-class Roll : Bread {
-    override fun name(): String = "Roll"
-
-    override fun calories(): String = " : 200"
+class Roll : Bread{
+ override fun name(): String = "Pan de pita"
+ 
+ override fun calories(): String  = " : 245 kcal"
 }

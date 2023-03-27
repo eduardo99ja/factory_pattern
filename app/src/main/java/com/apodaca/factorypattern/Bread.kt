@@ -1,9 +1,6 @@
 package com.apodaca.factorypattern
 
 interface Bread {
-    fun name(): String
-    fun calories(): String
+ fun name(): String
+ fun calories(): String
 }
-
-
-

@@ -6,15 +6,131 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/common_padding_min"
+        android:layout_marginHorizontal="@dimen/common_padding_min"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgCover"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/card_img_cover_height"
+                android:src="@drawable/img_sandwich"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Bocadillo"
+                android:layout_marginStart="@dimen/common_padding_default"
+                android:layout_marginEnd="@dimen/common_padding_middle"
+                app:firstBaselineToTopHeight="@dimen/card_baseline_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgCover"
+                style="?attr/textAppearanceHeadline5" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="4.5"
+                android:progressTint="#FBC02D"
+                app:firstBaselineToTopHeight="@dimen/common_padding_middle"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                style="@style/Widget.AppCompat.RatingBar.Small"/>
+
+            <TextView
+                android:id="@+id/tvSecondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Descripción"
+                app:firstBaselineToTopHeight="@dimen/card_baseline_secondary"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/ratingBar"
+                style="?attr/textAppearanceSubtitle2"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Esto es una descripción, no se que más poner, pero quiero añadir un texto que pueda hacer una mejor previsualización en este desarrolo de android."
+                app:firstBaselineToTopHeight="@dimen/card_baseline_supporting"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvSecondary"
+                style="@style/TextAppearance.MaterialComponents.Body2"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/color_divider"
+                android:layout_marginTop="@dimen/common_padding_middle"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"/>
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etiquetas"
+                app:firstBaselineToTopHeight="@dimen/card_baseline_subtitle"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                style="?attr/textAppearanceSubtitle1"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Integral"
+                android:layout_marginTop="@dimen/card_padding_chip"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvSubtitle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chia"
+                android:layout_marginStart="@dimen/common_padding_min"
+                app:layout_constraintStart_toEndOf="@id/chp1"
+                app:layout_constraintTop_toTopOf="@id/chp1"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Queso"
+                android:layout_marginStart="@dimen/common_padding_min"
+                app:layout_constraintStart_toEndOf="@id/chp2"
+                app:layout_constraintTop_toTopOf="@id/chp1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar"
+                android:layout_marginTop="@dimen/card_padding_button"
+                android:layout_marginStart="@dimen/common_padding_min"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chp1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
